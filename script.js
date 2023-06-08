@@ -71,13 +71,13 @@ function scoreCheck(player) {
   //console.log(topRowMap);
   
   //top row
-  // if(squareSelect[0].classList.contains(player) && squareSelect[1].classList.contains(player) && squareSelect[2].classList.contains(player)) {
-  //   console.log('win');
-  //  squareSelect[0].classList.add('green');
-  //  squareSelect[1].classList.add('green');
-  //  squareSelect[2].classList.add('green');
-  //   document.querySelector('h2').innerText = `${player} wins`;
-  // }
+  if(squareSelect[0].classList.contains(player) && squareSelect[1].classList.contains(player) && squareSelect[2].classList.contains(player)) {
+    console.log('win');
+   squareSelect[0].classList.add('green');
+   squareSelect[1].classList.add('green');
+   squareSelect[2].classList.add('green');
+    document.querySelector('h2').innerText = `${player} wins`;
+  }
 
   //middle row
   if(squareSelect[3].classList.contains(player) && squareSelect[4].classList.contains(player) && squareSelect[5].classList.contains(player)) {
