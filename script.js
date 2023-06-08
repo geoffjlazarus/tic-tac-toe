@@ -127,7 +127,7 @@ function scoreCheck(player) {
   //draw condition
   if(turn === squareSelect.length) {
    for (const square of squareSelect) {
-     if(square.classList.contains('x').length == square.classList.contains('o').length) {
+     if( (square.classList.contains('x').length === 5 && !square.classList.contains('green') ) || (square.classList.contains('o').length === 5 && !square.classList.contains('green'))) {
         document.querySelector('h2').innerText = `Draw`;
       }
     }
