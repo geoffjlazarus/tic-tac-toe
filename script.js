@@ -3,24 +3,11 @@
   
   //squareselect nodelist
   let squareSelect = document.querySelectorAll(".square");
-  let board = document.querySelector("board")
-
-  //array of values taken from squareselect nodelist
-  let arrFrom = Array.from(squareSelect.values());
-  //let arrFrom = [...squareSelect]
-
-  //let firstRow = arrFrom.slice(0,2);
-
- // let firstrow = [0,1,2];
-  let topRowMap = [0,1,2].map(i => squareSelect[i]);
-
 
   let player;
   let turn = 0;
 
   
-
-
   /*----- state variables -----*/
 
 
@@ -64,11 +51,6 @@ function boxClick(event) {
 }
 
 function scoreCheck(player) {
-
-  //console.log([0,1,2].map(i=>squareSelect[i].classList.contains(player)));
-
-  
-  //console.log(topRowMap);
   
   //top row
   if(squareSelect[0].classList.contains(player) && squareSelect[1].classList.contains(player) && squareSelect[2].classList.contains(player)) {
@@ -152,7 +134,6 @@ function scoreCheck(player) {
   }
 
 }
-
 
 //clears classes
 function reset() {
