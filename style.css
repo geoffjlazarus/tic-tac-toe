@@ -1,0 +1,107 @@
+body {
+    background-color: #1f2230;
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 750px;
+    margin: 0 auto;
+}
+
+:root {
+    --win-col: green;
+}
+
+h1 { 
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /*width: 750px;
+    /*border: solid 1px white;*/
+   /* margin: 0 auto;*/
+}
+
+/* .board-column-1 {
+    grid-column: 1;
+    grid-row: 1 auto;
+    background-color: purple;
+} */
+
+.square {
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    border: 1px solid white;
+
+}
+
+
+
+ /*.. Last column 
+.square:nth-child(3n) { 
+    background-color: coral;
+}
+
+/*
+.square:nth-child(3n-1) { /* ... */ 
+   /* background-color:aqua;
+}
+
+.square:nth-child(3n-2) { /* ... */ 
+   /* background-color:yellow;
+
+}
+*/
+
+
+/* First row */
+.square:nth-child(-n+3) {
+    background-color: none ;
+}
+
+/** Second row
+.square:nth-child(n+4):nth-child(-n+6) {
+    background-color: chartreuse;
+}
+
+.square:nth-child(n+7):nth-child(-n+9) {
+    background-color: teal;
+}
+
+*/
+
+
+.x {
+    background-image: url(./images/x-symbol-svgrepo-com.svg);
+    background-size:contain;
+}
+
+.o {
+    background-image: url(./images/circle-svgrepo-com.svg);
+    background-size: contain;
+}
+
+.green {
+    background-color: green;
+}
+
+#reset-button {
+    margin-top: 50px;
+    padding:10px 20px;
+    font-size: 22px;
+    border-radius: 9px;
+    border-color: white;
+    
+}
+
+#reset-button:active {
+    background-color: #393e56;
+    color: white;
+    border-color: white;
+}
