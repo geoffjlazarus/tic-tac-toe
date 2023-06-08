@@ -9,11 +9,16 @@
   let arrFrom = Array.from(squareSelect.values());
   //let arrFrom = [...squareSelect]
 
-  let firstRow = arrFrom.slice(0,2);
+  //let firstRow = arrFrom.slice(0,2);
+
+ // let firstrow = [0,1,2];
+  let topRowMap = [0,1,2].map(i => squareSelect[i]);
 
 
   let player;
   let turn = 0;
+
+  
 
 
   /*----- state variables -----*/
@@ -50,7 +55,6 @@ function boxClick(event) {
   //if empty, add the toggled player and turn off new inputs, iterate turn, check score
   if(!event.target.classList.contains('x') && !event.target.classList.contains('o')) {
     event.target.classList.add(player);
-  
     event.target.removeEventListener("click", squareSelect);
     turn++;
   }
@@ -60,19 +64,24 @@ function boxClick(event) {
 }
 
 function scoreCheck(player) {
+
+  //console.log([0,1,2].map(i=>squareSelect[i].classList.contains(player)));
+
+  
+  //console.log(topRowMap);
   
   //top row
-  if(squareSelect[0].classList.contains(player) && squareSelect[1].classList.contains(player) && squareSelect[2].classList.contains(player)) {
-    console.log('win');
-   squareSelect[0].classList.add('green');
-   squareSelect[1].classList.add('green');
-   squareSelect[2].classList.add('green');
-    document.querySelector('h2').innerText = `${player} wins`;
-  }
+  // if(squareSelect[0].classList.contains(player) && squareSelect[1].classList.contains(player) && squareSelect[2].classList.contains(player)) {
+  //   console.log('win');
+  //  squareSelect[0].classList.add('green');
+  //  squareSelect[1].classList.add('green');
+  //  squareSelect[2].classList.add('green');
+  //   document.querySelector('h2').innerText = `${player} wins`;
+  // }
 
   //middle row
   if(squareSelect[3].classList.contains(player) && squareSelect[4].classList.contains(player) && squareSelect[5].classList.contains(player)) {
-    console.log('win');
+   // console.log('win');
     squareSelect[3].classList.add('green');
     squareSelect[4].classList.add('green');
     squareSelect[5].classList.add('green');
@@ -81,7 +90,7 @@ function scoreCheck(player) {
  
   //bottom row
   if(squareSelect[6].classList.contains(player) && squareSelect[7].classList.contains(player) && squareSelect[8].classList.contains(player)) {
-    console.log('win');
+   // console.log('win');
     squareSelect[6].classList.add('green');
     squareSelect[7].classList.add('green');
     squareSelect[8].classList.add('green');
@@ -90,7 +99,7 @@ function scoreCheck(player) {
 
   //first column
   if(squareSelect[0].classList.contains(player) && squareSelect[3].classList.contains(player) && squareSelect[6].classList.contains(player)) {
-    console.log('win');
+ //   console.log('win');
     squareSelect[0].classList.add('green');
     squareSelect[3].classList.add('green');
     squareSelect[6].classList.add('green');
@@ -99,7 +108,7 @@ function scoreCheck(player) {
 
   //second column
   if(squareSelect[1].classList.contains(player) && squareSelect[4].classList.contains(player) && squareSelect[7].classList.contains(player)) {
-    console.log('win');
+   // console.log('win');
     squareSelect[1].classList.add('green');
     squareSelect[4].classList.add('green');
     squareSelect[7].classList.add('green');
@@ -117,7 +126,7 @@ function scoreCheck(player) {
 
   //diagonal 1
   if(squareSelect[0].classList.contains(player) && squareSelect[4].classList.contains(player) && squareSelect[8].classList.contains(player)) {
-    console.log('win');
+  //  console.log('win');
     squareSelect[0].classList.add('green');
     squareSelect[4].classList.add('green');
     squareSelect[8].classList.add('green');
@@ -126,7 +135,7 @@ function scoreCheck(player) {
 
   //diagonal 2
   if(squareSelect[2].classList.contains(player) && squareSelect[4].classList.contains(player) && squareSelect[6].classList.contains(player)) {
-    console.log('win');
+   // console.log('win');
     squareSelect[2].classList.add('green');
     squareSelect[4].classList.add('green');
     squareSelect[6].classList.add('green');
@@ -135,8 +144,8 @@ function scoreCheck(player) {
 
   //draw condition
   if(turn === squareSelect.length) {
-    for (const square of squareSelect) {
-      if(square.classList.contains('x').length == square.classList.contains('o').length) {
+   for (const square of squareSelect) {
+     if(square.classList.contains('x').length == square.classList.contains('o').length) {
         document.querySelector('h2').innerText = `Draw`;
       }
     }
