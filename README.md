@@ -10,7 +10,7 @@ To get win conditions, I wrote manual conditions for the NodeList of each square
 
 I created a reset button that triggers a function to clear the classes on each of the boxes, and to set the h2 text invisible.
 
-The draw condition is met when the turn counter has reached the length of the board and 5 Xs or Os have been placed but no 'green' condition has been met, unfortunately it doesn't work. 
+The draw condition is met when the turn counter has reached the length of the board the WIN boolean is false, which would be true if the manually entered win conditions are met. 
 
 I would like to have made a more concise or elegant solution for toggling the classes and storing/checking positions, perhaps by creating custom arrays or objects. I found the DOM NodeList fiddly.
 

@@ -6,6 +6,7 @@
 
   let player;
   let turn = 0;
+  const WIN = false;
 
   
   /*----- state variables -----*/
@@ -58,7 +59,8 @@ function scoreCheck(player) {
    squareSelect[0].classList.add('green');
    squareSelect[1].classList.add('green');
    squareSelect[2].classList.add('green');
-    document.querySelector('h2').innerText = `${player} wins`;
+  document.querySelector('h2').innerText = `${player} wins`;
+  WIN = true;
   }
 
   //middle row
@@ -68,6 +70,7 @@ function scoreCheck(player) {
     squareSelect[4].classList.add('green');
     squareSelect[5].classList.add('green');
     document.querySelector('h2').innerText = `${player} wins`;
+    WIN = true;
   }
  
   //bottom row
@@ -77,6 +80,7 @@ function scoreCheck(player) {
     squareSelect[7].classList.add('green');
     squareSelect[8].classList.add('green');
     document.querySelector('h2').innerText = `${player} wins`;
+    WIN = true;
   }
 
   //first column
@@ -86,6 +90,7 @@ function scoreCheck(player) {
     squareSelect[3].classList.add('green');
     squareSelect[6].classList.add('green');
     document.querySelector('h2').innerText = `${player} wins`;
+    WIN = true;
   }
 
   //second column
@@ -95,6 +100,7 @@ function scoreCheck(player) {
     squareSelect[4].classList.add('green');
     squareSelect[7].classList.add('green');
     document.querySelector('h2').innerText = `${player} wins`;
+    WIN = true;
   }
 
   //third column
@@ -104,6 +110,7 @@ function scoreCheck(player) {
     squareSelect[5].classList.add('green');
     squareSelect[8].classList.add('green');
     document.querySelector('h2').innerText = `${player} wins`;
+    WIN = true;
   }
 
   //diagonal 1
@@ -113,6 +120,7 @@ function scoreCheck(player) {
     squareSelect[4].classList.add('green');
     squareSelect[8].classList.add('green');
     document.querySelector('h2').innerText = `${player} wins`;
+    WIN = true;
   }
 
   //diagonal 2
@@ -122,18 +130,16 @@ function scoreCheck(player) {
     squareSelect[4].classList.add('green');
     squareSelect[6].classList.add('green');
     document.querySelector('h2').innerText = `${player} wins`;
+    WIN = true;
   }
+
 
   //draw condition
-  if(turn === squareSelect.length) {
-   for (const square of squareSelect) {
-     if( (square.classList.contains('x').length === 5 && !square.classList.contains('green') ) || (square.classList.contains('o').length === 5 && !square.classList.contains('green'))) {
-        document.querySelector('h2').innerText = `Draw`;
-      }
-    }
+  if(turn === squareSelect.length && WIN == false) {
+    document.querySelector('h2').innerText = `Draw`;
   }
-
 }
+
 
 //clears classes
 function reset() {
@@ -142,6 +148,4 @@ function reset() {
     }
     document.querySelector('h2').innerHTML = '&nbsp;'
    // turn = 0; //turn off for new first player
-    
-}
-
+  }
