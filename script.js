@@ -55,7 +55,7 @@ function scoreCheck(player) {
   
   //top row
   if(squareSelect[0].classList.contains(player) && squareSelect[1].classList.contains(player) && squareSelect[2].classList.contains(player)) {
-    console.log('win');
+  //  console.log('win');
    squareSelect[0].classList.add('green');
    squareSelect[1].classList.add('green');
    squareSelect[2].classList.add('green');
