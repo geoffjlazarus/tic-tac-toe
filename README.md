@@ -1,6 +1,6 @@
 # TicTacToe
 
-(Play)[https://geoffjlazarus.github.io/tic-tac-toe/]
+[Play](https://geoffjlazarus.github.io/tic-tac-toe/)
 
 - Written in HTML, CSS and JavaScript
 
